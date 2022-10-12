@@ -1,59 +1,76 @@
 body {
     min-height: 100vh;
     margin: 0;
-    background-color: hsl(0, 0%, 15%);
+    background-color: hsl(75, 40%, 0%);
     background-image: url(./bg.jpg);
     background-size: cover;
     background-blend-mode: hard-light;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 300;
+    color: #ffffff;
 }
 
 #root {
     height: 100vh;
+    display: grid;
 }
 
-.splash {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 60vw;
-    height: 60vh;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    translate: -50% -50%;
-    pointer-events: none;
+#root > * {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
 }
 
-ul {
-    display: flex;
-    gap: 1rem;
-    margin: 0;
+.title {
+    align-self: center;
+    width: min(1000px, 100vw - 2rem);
+    margin: 0 auto;
+    z-index: 9999;
+}
+
+.title p,
+.title h1,
+.title h3,
+.title a {
     padding: 0;
-    list-style: none;
+    margin: 0 0 2rem 0;
+    line-height: 1em;
 }
 
-p {
-    color: hsl(230, 30%, 75%);
-    font-size: 1rem;
-    margin: 0 0 .5rem 0;
+.title h1 {
+    font-size: 4rem;
+    background-image: url(./leaf.jpg);
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0px 0px 5px hsl(0, 0%, 100%, 0.2));
 }
 
-a {
+.title p {
+    font-size: 1.5rem;
+}
+
+.title a {
+    display: inline-block;
+    padding: 1.2rem 2rem;
+    background-color: hsl(149, 100%, 20%);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 0.5rem;
+}
+
+.credits {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+}
+
+.credits a {
+    color: #777777;
     text-decoration: none;
 }
 
-svg {
-    height: 2rem;
-    fill: hsl(230, 30%, 75%);
-    filter: drop-shadow(0px 0px 2px hsl(230, 30%, 95%, 0.5));
-    transition: filter 0.2s ease, fill 0.2s ease;
-    pointer-events: all;
-}
-
-svg:hover {
-    fill: hsl(230, 30%, 85%);
-    filter: drop-shadow(0px 0px 5px hsl(230, 30%, 95%, 0.5));
+.credits a:hover {
+    text-decoration: underline;
 }
