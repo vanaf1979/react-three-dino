@@ -10,10 +10,10 @@ const Dino = (props) => {
     const {scene, nodes, materials, animations} = useGLTF('../../public/trex.gltf');
     const {mixer} = useAnimations(animations);
     const [albedo, ao, normal, rough] = useTexture([
-        '../../public/textures/TRex_Albedo.png',
-        '../../public/textures/TRex_AO.png',
-        '../../public/textures/TRex_Normal.png',
-        '../../public/textures/TRex_Rough.png'
+        '../../public/textures/TRex_Albedo.jpg',
+        '../../public/textures/TRex_AO.jpg',
+        '../../public/textures/TRex_Normal.jpg',
+        '../../public/textures/TRex_Rough.jpg'
     ])
 
     useEffect(() => {
